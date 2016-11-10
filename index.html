@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html ng-app="app" strict-di>
+<head>
+	<meta charset="utf-8">
+	<title>Angular Exemplo com Internacionalização</title>
+	<link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+</head>
+<body>
+	<div class="container" style="padding: 70px;">
+		<div class="well">
+			<div class="row">
+				<div class="col-md-12">
+					<span ng-bind-html="'title' | translate"></span><br/>
+					<span ng-bind-html="'test' | translate"></span>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-12" ng-controller="Home as vm">
+				<button class="btn btn-primary" ng-click="vm.setLanguage('en')" ng-bind-html="'en' | translate"></button>
+				<button class="btn btn-primary" ng-click="vm.setLanguage('pt')" ng-bind-html="'pt' | translate"></button>
+				<button class="btn btn-primary" ng-click="vm.setLanguage('de')" ng-bind-html="'de' | translate"></button>
+			</div>
+		</div>
+	</div>
+
+	<!-- vendor -->
+	<script type="text/javascript" src="bower_components/angular/angular.js"></script>
+	<script type="text/javascript" src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+	<script type="text/javascript" src="bower_components/angular-translate/angular-translate.js"></script>
+	<!-- fim vendor -->
+
+	<!-- app -->
+	<script type="text/javascript" src="src/app/app.module.js"></script>
+	<script type="text/javascript" src="src/app/home/home.module.js"></script>
+	<script type="text/javascript" src="src/app/home/home.translate.js"></script>
+	<script type="text/javascript" src="src/app/home/home.js"></script>
+</body>
+</html>
